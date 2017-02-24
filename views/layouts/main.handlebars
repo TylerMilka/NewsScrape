@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>Kevingtam Post: All the News That's Fit to Scrape</title>
-	<!-- Latest compiled and minified CSS & JS -->
-	<link href="https://blackrockdigital.github.io/startbootstrap-logo-nav/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://blackrockdigital.github.io/startbootstrap-logo-nav/css/logo-nav.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
+    <title>News Scrape</title>
+    <!-- BOOTSTRAP - Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+    <!-- BOOTSTRAP - Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    {{!-- Custom Javascript --}}
+    <script type="text/javascript" src="/javascript/app.js"></script>
 <body>
-		{{{ body }}}
-    <!-- /.container -->
-
-    <!-- jQuery
-    <script src="js/jquery.js"></script>-->
-
-    <!-- Bootstrap Core JavaScript
-    <script src="js/bootstrap.min.js"></script>-->
+    <div class="container">
+        <div class="page-header">
+            
+		<br>
+            <h1 class="text-center text-primary">"News Scrape"</h1>
+        </div>
+            {{{body}}}                
+        <footer>
+        	<h6 class="text-center">(c) 2017 Tyler Milka</h6>
+        </footer>
+    </div>
 </body>
+
 </html>
