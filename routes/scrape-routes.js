@@ -6,10 +6,16 @@ var cheerio = require("cheerio");
 // =============================================================
 module.exports = function(app) {
 
-  // Main route (simple Hello World Message)
+  // First, tell the console what server.js is doing
+console.log("\n***********************************\n" +
+            "Grabbing every thread name and link\n" +
+            "from reddit's webdev board:" +
+            "\n***********************************\n");
+
+  // Main route 
   app.get("/", function(req, res) {
-    var scrapings = [];
-    request("https://www.ultimate-guitar.com/news/", function(error, response, html) {
+    var results = [];
+    request("https://www.reddit.com/r/Guitar/", function(error, response, html) {
 
       // Load the HTML into cheerio and save it to a variable
       // '$' becomes a shorthand for cheerio's selector commands, much like jQuery's '$'
@@ -17,7 +23,7 @@ module.exports = function(app) {
 
       // With cheerio, find each p-tag with the "title" class
       // (i: iterator. element: the current element)
-      $("div.section").each(function(i, element) {
+      $("p.title").each(function(i, element) {
 
         // Save the text of the element (this) in a "title" variable
         var title = $(this).text();
@@ -30,10 +36,11 @@ module.exports = function(app) {
         if (title && link) {
           console.log("Working");
           // Save the data in the scrapedData db
-          scrapings.push({
+          results.push({
             title: title,
             link: link
           },
+
           function(error, saved) {
             // If there's an error during this query
             if (error) {
@@ -49,8 +56,8 @@ module.exports = function(app) {
         }
       });
     });
-    console.log(scrapings);
-    res.render('index', { articles: scrapings });
+    console.log(results);
+    res.render('index', { articles: results });
   });
 
   app.get("/scrape", function(req, res){

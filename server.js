@@ -9,7 +9,7 @@
  var Schema = mongoose.schema;
  
  // Database configuration
- mongoose.connect('mongodb://localhost/news_db');
+ mongoose.connect('mongodb://localhost/test');
  
  // Hook mongoose configuration to the db variable
  var db = mongoose.connection;
@@ -31,7 +31,7 @@
  // Sets up the Express App
  // =============================================================
  var app = express();
- var PORT = process.env.PORT || 3000;
+ var PORT = process.env.PORT || 5000;
  
  // Sets up the Express app to handle data parsing
  app.use(bodyParser.json());
@@ -48,7 +48,7 @@
  app.set("view engine", "handlebars");
  
  // Static directory
- app.use(express.static("./public"));
+ app.use(express.static("./views"));
  
  // Routes =============================================================
  
